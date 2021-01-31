@@ -1,0 +1,7 @@
+node_modules/
+.huskyrc
+.lintstagedrc
+__tests__/**/*.css
+dist/
+build/
+*.md
