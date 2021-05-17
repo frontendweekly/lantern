@@ -1,5 +1,5 @@
 {
-  "*.{js,json,pcss}": "pretty-quick",
+  "*.{js}": ["eslint --cache --fix", "jest --findRelatedTests"],
   "*.{pcss}": "stylelint --fix",
-  "*.{js}": ["eslint --fix", "jest --findRelatedTests"]
+  "*.{js,pcss, json}": "prettier --write"
 }

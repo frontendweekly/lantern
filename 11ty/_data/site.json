@@ -1,0 +1,16 @@
+{
+  "name": "Lantern",
+  "description": "Lantern is where I think out loud based on highlights from what I read.",
+  "url": "https://lantern.frontendweekly.tokyo",
+  "lang": "en",
+  "author": {
+    "name": "Yuya Saito",
+    "mail": "hello@studiomohawk.com"
+  },
+  "social": {
+    "github": "https://github.com/frontendweekly/lantern",
+    "twitter": "https://twitter.com/frontend_weekly"
+  },
+  "maxPostsPerPage": 10,
+  "paymentPointer": "$pay.stronghold.co/1a1d5ecbf6f988e4be3abc11cfb0a0b912d"
+}

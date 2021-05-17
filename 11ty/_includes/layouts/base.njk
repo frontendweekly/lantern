@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="no-js" lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="generator" content="Eleventy">
+  <link rel="author" href="humans.txt">
+  {% include "partials/global/meta-info.njk" %}
+  <script>document.documentElement.classList.remove('no-js');</script>
+  {% if global.environment == "production" %}
+    <style>{% include "assets/styles/main.css" %}</style>
+  {% else %}
+    <link rel="stylesheet" href="/css/main.css">
+  {% endif %}
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+  <link rel="alternate" type="application/feed+json" title="{{ site.name }}" href="{{ site.url }}/feed.json">
+</head>
+<body>
+  <a class="c-skip-link" href="#main-content">Skip to content</a>
+  <div class="o-layout">
+    <main id="main-content" class="o-layout__main" tabindex="-1" class="page-{{ pageType | lower }}">
+      {% block content %}
+      {% endblock %}
+    </main>
+    <aside class="o-layout__side">
+      {% include "partials/components/site-head.njk" %}
+      {% include "partials/components/site-foot.njk" %}
+    </aside>
+  </div>
+</body>
+</html>

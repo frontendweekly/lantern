@@ -1,0 +1,81 @@
+:root {
+  --type-line-height: 1.6;
+  --type-face-sans-serif: system-ui, 'Segoe UI', roboto, helvetica, arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --type-face-sans: charter, 'Bitstream Charter', serif, 'Apple Color Emoji',
+    'Segoe UI Emoji';
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,18,1.333,1140,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+:root {
+  --fluid-min-width: 320;
+  --fluid-max-width: 1140;
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+}
+
+@media screen and (min-width: 1140px) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
+
+:root {
+  --f--2-min: 10.13;
+  --f--2-max: 11.26;
+  --type-step--200: calc(
+    ((var(--f--2-min) / 16) * 1rem) + (var(--f--2-max) - var(--f--2-min)) *
+      var(--fluid-bp)
+  );
+  --f--1-min: 13.5;
+  --f--1-max: 15;
+  --type-step--300: calc(
+    ((var(--f--1-min) / 16) * 1rem) + (var(--f--1-max) - var(--f--1-min)) *
+      var(--fluid-bp)
+  );
+  --f-0-min: 18;
+  --f-0-max: 20;
+  --type-step--400: calc(
+    ((var(--f-0-min) / 16) * 1rem) + (var(--f-0-max) - var(--f-0-min)) *
+      var(--fluid-bp)
+  );
+  --f-1-min: 23.99;
+  --f-1-max: 26.66;
+  --type-step--500: calc(
+    ((var(--f-1-min) / 16) * 1rem) + (var(--f-1-max) - var(--f-1-min)) *
+      var(--fluid-bp)
+  );
+  --f-2-min: 31.98;
+  --f-2-max: 35.54;
+  --type-step--600: calc(
+    ((var(--f-2-min) / 16) * 1rem) + (var(--f-2-max) - var(--f-2-min)) *
+      var(--fluid-bp)
+  );
+  --f-3-min: 42.63;
+  --f-3-max: 47.37;
+  --type-step--700: calc(
+    ((var(--f-3-min) / 16) * 1rem) + (var(--f-3-max) - var(--f-3-min)) *
+      var(--fluid-bp)
+  );
+  --f-4-min: 56.83;
+  --f-4-max: 63.15;
+  --type-step--800: calc(
+    ((var(--f-4-min) / 16) * 1rem) + (var(--f-4-max) - var(--f-4-min)) *
+      var(--fluid-bp)
+  );
+  --f-5-min: 75.76;
+  --f-5-max: 84.17;
+  --type-step--900: calc(
+    ((var(--f-5-min) / 16) * 1rem) + (var(--f-5-max) - var(--f-5-min)) *
+      var(--fluid-bp)
+  );
+}
+
+html {
+  font-family: var(--type-face-sans-serif);
+  font-size: var(--type-step--400);
+  line-height: var(--type-line-height);
+}

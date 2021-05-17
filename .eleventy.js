@@ -7,13 +7,16 @@ const navigationPlugin = require('@11ty/eleventy-navigation');
 const md = require('@frontendweekly/eleventy-plugin-markdown');
 
 module.exports = function (eleventyConfig) {
+  // Watch postcss
+  eleventyConfig.addWatchTarget('./11ty/_postcss/');
+
   // Add plugins
   eleventyConfig.addPlugin(rssPlugin);
   eleventyConfig.addPlugin(syntaxHighlightPlugin);
   eleventyConfig.addPlugin(navigationPlugin);
 
   // I like toml...
-  eleventyConfig.addDataExtension('toml', contents => toml.parse(contents));
+  eleventyConfig.addDataExtension('toml', (contents) => toml.parse(contents));
 
   // markdown-it config
   eleventyConfig.setLibrary('md', md);
@@ -28,4 +31,4 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: 'njk',
     passthroughFileCopy: true,
   };
-}
+};

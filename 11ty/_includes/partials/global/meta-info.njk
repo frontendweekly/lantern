@@ -1,0 +1,25 @@
+{% set pageTitle = title + ' - ' + site.name %}
+
+{% if pageType == 'Homepage' %}
+  {% set pageTitle = title %}
+{% endif %}
+
+{% set currentUrl = site.url + page.url %}
+
+{% if desc %}
+  {% set metaDesc = desc %}
+{% else %}
+  {% set metaDesc = site.description %}
+{% endif %}
+
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}">
+<link rel="me" href="mailto:{{ site.author.mail }}">
+<meta name="author" content="{{ site.author.name }}">
+{% if metaDesc %}
+  <meta name="description" content="{{ metaDesc }}">
+{% endif %}
+
+{% if site.paymentPointer %}
+  <meta name="monetization" content="{{ site.paymentPointer }}">
+{% endif %}

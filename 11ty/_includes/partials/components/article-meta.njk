@@ -1,0 +1,13 @@
+<p class="c-article-meta">
+  {% if metaAuthor %}
+    <span class="c-article-meta__author">By <span class="p-author h-card">{{ metaAuthor }}</span></span>
+  {% endif %}
+  {% if metaDate %}
+    <time datetime="{{ metaDate | dateIsoFilter }}"
+          class="c-post-article__date dt-published">{{ metaDate | dateOrdinalSuffixFilter }}</time>
+  {% endif %}
+  {% if metaUpdateDate %}
+    <time datetime="{{ metaUpdateDate | dateIsoFilter }}"
+          class="c-post-article__date dt-updated">{{ metaUpdateDate | dateOrdinalSuffixFilter }}</time>
+  {% endif %}
+</p>
